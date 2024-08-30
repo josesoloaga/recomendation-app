@@ -12,7 +12,7 @@ function App() {
       <Route
         path="/recomendation"
         element={currentStep < 4 ? <Recomendation /> : <ProductList />}
-      />{' '}
+      />
     </Routes>
   );
 }

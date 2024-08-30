@@ -66,7 +66,7 @@ export const ProductList = () => {
           />
         </FilterContainer>
         <ContainerBotonStep>
-          <BotonStep onClick={startNewRecomendation}>Limpiar</BotonStep>
+          <BotonStep onClick={startNewRecomendation}>Nueva recomendación</BotonStep>
           <BotonStep onClick={handleGoBack}>Volver</BotonStep>
         </ContainerBotonStep>
       </ControlPanel>

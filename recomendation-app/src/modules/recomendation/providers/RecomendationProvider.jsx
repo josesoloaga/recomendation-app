@@ -32,7 +32,6 @@ export const RecomendationProvider = ({ children }) => {
     setIsLoading(true);
     try {
       const { data } = await getAllSubcategories(categorySelected);
-      //console.log("data en getSubCategories: ", data);
       setSubCategories(data);
       setIsLoading(false);
     } catch (error) {
@@ -59,13 +58,11 @@ export const RecomendationProvider = ({ children }) => {
         subCategorySelected,
         colorSelected,
       );
-      console.log(' product data:', data);
       if (data && data.length > 0) {
         setProduct(data);
       }
       setIsLoading(false);
     } catch (error) {
-      console.log('Error fetching product:', error);
       setIsLoading(false);
     }
   }, [categorySelected, subCategorySelected, colorSelected]);
@@ -75,12 +72,10 @@ export const RecomendationProvider = ({ children }) => {
   }, []);
 
   const handleCategorySelected = (value) => {
-    //console.log("value: ", value);
     setCategorySelected(value);
   };
 
   const handleSubCategorySelected = (value) => {
-    //console.log("value de handleSubCategorySelected: ", value);
     setSubCategorySelected(value);
   };
 
@@ -89,8 +84,6 @@ export const RecomendationProvider = ({ children }) => {
   };
 
   const handleProductSelected = (value) => {
-    console.log('value: ', value);
-
     setProduct(value);
   };
 

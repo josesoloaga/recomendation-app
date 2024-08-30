@@ -5,8 +5,6 @@ export const RecomendationComponent = ({
   onChange,
 })=>{
 
-//console.log("recomendatiuon: ", recomendation)
-
     return(
       <StyledList>
         {recomendation?.map((item) => (

@@ -1,22 +1,22 @@
-import { useRecomendation } from "./modules/recomendation/providers/useRecomendation";
+import { Route, Routes } from 'react-router-dom';
+import { ProductList } from './modules/product/ProductList';
+import { Recomendation } from './modules/recomendation/Recomendation';
+import { Home } from './Home';
+import { useRecomendation } from './modules/recomendation/providers/useRecomendation';
 
 function App() {
-  const { categories, setCategorie } = useRecomendation();
-  if (categories.length < 1) {
-    return <h1>Loadding...</h1>;
-  }
+  const { currentStep } = useRecomendation();
   return (
-    <>
-<input onChange={(event)=>setCategorie(event.target.value)}/>
-
-      {categories.map((category) => (
-        <div key={category.name}>
-          <h1>{category.name}</h1>
-        </div>
-
-      ))}
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route
+        path="/recomendation"
+        element={currentStep < 4 ? <Recomendation /> : <ProductList />}
+      />{' '}
+    </Routes>
   );
 }
 
 export default App;
+
+

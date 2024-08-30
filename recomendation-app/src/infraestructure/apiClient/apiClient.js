@@ -2,7 +2,7 @@ import axios from "axios";
 
 const options = {
   headers: {
-    "X-API-Key": "48bb32c0-c370-439f-b38a-6c5ae3f13894",
+    "X-API-Key": import.meta.env.VITE_API_KEY,
   },
 };
 
